@@ -60,15 +60,15 @@ async function sendPrompt(prompt) {
         if (buffer.trim()) {
             try {
                 const parsed = JSON.parse(buffer);
-                //fullResponse += parsed.response;
-                console.log(parsed.response)
+                fullResponse += parsed.response;
+                //console.log(parsed.response)
             } catch (error) {
                 console.error("Failed to parse final JSON part:", buffer, error);
             }
         }
 
         // Print the full response
-        //console.log(fullResponse);
+        console.log(fullResponse);
 
     } catch (error) {
         console.error("Error:", error);
