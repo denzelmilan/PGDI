@@ -1,0 +1,23 @@
+ollama commands to run server on port 8080
+$env:OLLAMA_HOST="http://127.0.0.1:8080"
+ollama serve
+
+
+how to "train the AI"
+
+1. Contextual Adaptation (Prompt Engineering)
+You can continuously guide the model’s behavior by carefully crafting your prompts. For example, you could provide the syllabus topics in the prompt and ask it to focus only on that specific material, like:
+
+Example: “Based on the following syllabus on environmental engineering, help me learn about topic X.”
+2. External Knowledge Injection
+To make the model more effective for your specific syllabus, you can also supply relevant study material, articles, or sections of textbooks during interactions. This ensures that the model is drawing from the exact content you're learning.
+
+Example: You could paste paragraphs or summaries of chapters from your syllabus, and then ask questions or request explanations.
+3. Embedding External Knowledge in Memory (in your application)
+If you're building an application, you can embed external knowledge, like textbooks or course materials, and then have the model refer to that knowledge during the conversation. While this doesn’t train the model itself, it simulates a model that "knows" your syllabus.
+
+tasks
+Front Denzel e Shairon (design e fornt)
+o resto back 
+
+intallem todos IDE para C#
