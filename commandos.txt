@@ -17,7 +17,7 @@ Example: You could paste paragraphs or summaries of chapters from your syllabus,
 If you're building an application, you can embed external knowledge, like textbooks or course materials, and then have the model refer to that knowledge during the conversation. While this doesn’t train the model itself, it simulates a model that "knows" your syllabus.
 
 tasks
-Front Denzel e Shairon (design e fornt)
+Front Denzel e Shayron (design e fornt)
 o resto back 
 
 intallem todos IDE para C#

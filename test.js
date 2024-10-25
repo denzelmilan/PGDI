@@ -5,6 +5,19 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+var  tosend;
+var mammoth = require("mammoth");
+mammoth.extractRawText({ path:"C:\\Users\\25882\\Desktop\\New Microsoft Word Document.docx" })
+    .then(function(result){
+        var text = result.value; // The raw text 
+
+        //this prints all the data of docx file
+        console.log(text);
+
+        tosend = text;
+    })
+    .done();
+
 async function sendPrompt(prompt) {
     const requestData = {
         model: "phi3:latest", //  model name , check by ollama List 
@@ -75,6 +88,7 @@ async function sendPrompt(prompt) {
     }
 }
 
+sendPrompt(tosend);
 // Function to prompt user input and send it
 function promptUser() { //all
     rl.question('me: ', async (input) => {
