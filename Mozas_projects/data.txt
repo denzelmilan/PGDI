@@ -1,0 +1,19 @@
+Nome: Edson Alage
+Idade: 22
+Curso: Engenharia Informática
+Disciplinas: Processos de Gestão e Inovação
+Nome: denzel bila
+Idade: 22
+Curso: contabilidade
+Disciplinas: Processos de Gestão e Inovação, Matemática
+
+Nome: denzel bila
+Idade: 20
+Curso: Engenharia Informática
+Disciplinas: Processos de Gestão e Inovação, Matemática
+
+Nome: denzel bila
+Idade: 20
+Curso: Engenharia Informática
+Disciplinas: Processos de Gestão e Inovação
+

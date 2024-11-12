@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Estudo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Plataforma de Estudo com Assistente Virtual</h1>
+    <p>Preencha seus dados e escolha as disciplinas que deseja estudar.</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#cadastro">Cadastro do Aluno</a></li>
+        <li><a href="#informacao">Sobre a Plataforma</a></li>
+    </ul>
+</nav>
+
+<section id="cadastro">
+    <h2>Cadastro do Aluno</h2>
+    <form id="formCadastro">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required><br><br>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" required><br><br>
+
+        <label for="curso">Curso:</label>
+        <input type="text" id="curso" required><br><br>
+
+        <label for="numDisciplinas">Número de disciplinas a estudar:</label>
+        <input type="number" id="numDisciplinas" min="1" required><br><br>
+
+        <div id="disciplinasDiv"></div>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+    <div id="mensagemCadastro"></div>
+</section>
+
+<section id="informacao">
+    <h2>Sobre a Plataforma</h2>
+    <p>Esta plataforma oferece um assistente virtual de IA para ajudar você a estudar as disciplinas de seu curso de maneira eficiente.</p>
+    <h2>Como funciona?</h2>
+    <p>Esta plataforma foi desenvolvida para ser um assistente de estudo virtual para os alunos. Ela oferece uma interação inteligente com a IA para tirar dúvidas e ajudar no aprendizado de várias disciplinas acadêmicas.</p>
+
+    <h2>Para que serve?</h2>
+    <p>Você pode usar a plataforma para se cadastrar, escolher suas disciplinas e começar a estudar. A plataforma é integrada com IA Ollama, que pode responder a suas dúvidas e fornecer explicações sobre os tópicos das disciplinas que você escolheu.</p>
+
+    <h2>Importância da Plataforma</h2>
+    <p>A plataforma oferece uma maneira fácil e eficiente de estudar. Ela ajuda os alunos a se organizarem em suas atividades de estudo, oferece um meio de interação com inteligência artificial para esclarecer dúvidas e melhora a compreensão de conteúdos acadêmicos complexos.</p>
+
+    <h2>Como utilizar?</h2>
+    <ul>
+        <li>1. Faça o cadastro na plataforma com seu nome, idade, curso e as disciplinas que você deseja estudar.</li>
+        <li>2. Após o cadastro, escolha a disciplina que você quer estudar e interaja com a IA para tirar dúvidas e aprender mais sobre o conteúdo.</li>
+        <li>3. Utilize a plataforma sempre que precisar de ajuda em suas disciplinas acadêmicas!</li>
+    </ul>
+    <p></p>
+    <br>
+    <p></p>
+    <br>
+</section>
+
+    <section id="interacao">
+        <h2>Interação com a IA Ollama</h2>
+        <form id="formInteracao">
+            <label for="pergunta">Digite sua pergunta:</label>
+            <input type="text" id="pergunta" required>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="respostaIA"></div>
+        <p></p>
+        <br>
+        <p></p>
+        <br>
+    </section>
+
+    <script>
+        // Captura o formulário de interação
+        document.getElementById('formInteracao').addEventListener('submit', function(event) {
+            event.preventDefault();  // Impede o envio do formulário
+
+            const pergunta = document.getElementById('pergunta').value;
+
+            if (!pergunta) {
+                alert('Por favor, faça uma pergunta.');
+                return;
+            }
+
+            // Enviar a pergunta para o backend
+            fetch('/interacao', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ pergunta: pergunta }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Mostrar a resposta da IA
+                    document.getElementById('respostaIA').innerHTML = `
+                <h3>Resposta da IA:</h3>
+                <p>${data.resposta}</p>
+            `;
+                })
+                .catch(error => {
+                    console.error('Erro ao enviar pergunta para a IA:', error);
+                    alert('Erro ao interagir com a IA.');
+                });
+        });
+    </script>
+
+
+
+
+<footer>
+    <p>&copy; 2024 Plataforma de Estudo</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
